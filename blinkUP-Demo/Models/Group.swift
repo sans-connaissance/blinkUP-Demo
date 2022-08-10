@@ -10,6 +10,7 @@ import Foundation
 struct Group: Codable, Identifiable, Hashable {
     var id: Int
     var name: String?
+    var image: String?
     var shortDescription: String?
     var longDescription: String?
     var message: [Message]?
@@ -28,6 +29,7 @@ struct Message: Codable, Identifiable, Hashable {
 struct MeetUp: Codable, Identifiable, Hashable {
     var id: Int
     var name: String?
+    var description: String?
     var numberOfAttendees: Int?
     
 }
