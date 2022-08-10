@@ -15,8 +15,8 @@ struct FriendViewModel: Hashable {
         return friend.id
     }
     
-    var image:Image {
-        return Image(systemName: friend.image ?? "person.fill" )
+    var image: String {
+        return friend.image ?? "person.fill"
     }
     
     var displayName: String {
@@ -27,8 +27,9 @@ struct FriendViewModel: Hashable {
         return friend.fullName ?? ""
     }
     
-    var distanceAway: Double {
-        return friend.distanceAway ?? 9.99
+    var distanceAway: String {
+        
+        return friend.distanceAway?.withCommas() ?? ""
     }
     
     var memberGroups: [GroupViewModel] {
@@ -40,5 +41,15 @@ struct FriendViewModel: Hashable {
         guard let unWrappedGroups = friend.managedGroups else {return []}
         let groups = unWrappedGroups.map(GroupViewModel.init)
         return groups
+    }
+}
+
+/// NumberFormatter used in Person, Title, Department, and Campus ViewModels
+extension Double {
+    func withCommas() -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.minimumFractionDigits = 2
+        return numberFormatter.string(from: NSNumber(value: self))!
     }
 }

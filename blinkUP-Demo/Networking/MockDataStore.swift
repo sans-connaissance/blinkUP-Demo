@@ -8,7 +8,7 @@
 import Foundation
 
 let groups: [Group] = [bLinkupTeam, sanDiegoStateAztecs, alabamaCrimsonTide]
-let friends: [Friend] = [daveMalicke, willBott, danGiralte, joeFinney]
+let mockFriends: [Friend] = [daveMalicke, willBott, danGiralte, joeFinney]
 
 let bLinkupTeam = Group(
     id: 1,

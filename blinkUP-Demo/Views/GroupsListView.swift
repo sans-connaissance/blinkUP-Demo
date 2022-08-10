@@ -1,5 +1,5 @@
 //
-//  FriendsView.swift
+//  GroupsView.swift
 //  blinkUP-Demo
 //
 //  Created by David Malicke on 8/10/22.
@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct FriendsView: View {
+struct GroupsListView: View {
     var body: some View {
         HStack {
-            Text("Friends View")
+            Text("Groups View")
             Spacer()
         }
     }
 }
 
-struct FriendsView_Previews: PreviewProvider {
+struct GroupsView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendsView()
+        GroupsListView()
     }
 }

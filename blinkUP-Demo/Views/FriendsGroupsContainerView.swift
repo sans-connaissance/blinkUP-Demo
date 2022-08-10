@@ -28,15 +28,15 @@ struct FriendsGroupsContainerView: View {
             HStack(alignment: .center, spacing: 10) {
                 switch selectedScreen {
                 case "Friends":
-                    FriendsView()
+                    FriendsListView()
                         .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
                     
                 case "Groups":
-                    GroupsView()
+                    GroupsListView()
                         .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
                     
                 default:
-                    FriendsView()
+                    FriendsListView()
                         .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
                     
                 }
