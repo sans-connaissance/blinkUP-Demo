@@ -9,7 +9,10 @@ import SwiftUI
 
 struct FriendsView: View {
     var body: some View {
-        Text("Friends View")
+        HStack {
+            Text("Friends View")
+            Spacer()
+        }
     }
 }
 

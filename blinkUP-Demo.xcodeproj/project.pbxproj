@@ -20,6 +20,10 @@
 		416800C828A3DC01009212F3 /* GroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416800C728A3DC01009212F3 /* GroupsView.swift */; };
 		416800CA28A3DC09009212F3 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416800C928A3DC09009212F3 /* SearchView.swift */; };
 		416800CC28A3DC12009212F3 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416800CB28A3DC12009212F3 /* ProfileView.swift */; };
+		416800CE28A41CBD009212F3 /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416800CD28A41CBD009212F3 /* GroupViewModel.swift */; };
+		416800D028A41CC8009212F3 /* FriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416800CF28A41CC8009212F3 /* FriendViewModel.swift */; };
+		416800D228A41CE0009212F3 /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416800D128A41CE0009212F3 /* MessageViewModel.swift */; };
+		416800D428A41CF3009212F3 /* MeetUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416800D328A41CF3009212F3 /* MeetUpViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +41,10 @@
 		416800C728A3DC01009212F3 /* GroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsView.swift; sourceTree = "<group>"; };
 		416800C928A3DC09009212F3 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		416800CB28A3DC12009212F3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		416800CD28A41CBD009212F3 /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
+		416800CF28A41CC8009212F3 /* FriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewModel.swift; sourceTree = "<group>"; };
+		416800D128A41CE0009212F3 /* MessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
+		416800D328A41CF3009212F3 /* MeetUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetUpViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +108,10 @@
 		4115CF3428A33ECF008119A8 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				416800CD28A41CBD009212F3 /* GroupViewModel.swift */,
+				416800CF28A41CC8009212F3 /* FriendViewModel.swift */,
+				416800D128A41CE0009212F3 /* MessageViewModel.swift */,
+				416800D328A41CF3009212F3 /* MeetUpViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -197,13 +209,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				416800CA28A3DC09009212F3 /* SearchView.swift in Sources */,
+				416800D028A41CC8009212F3 /* FriendViewModel.swift in Sources */,
 				416800C828A3DC01009212F3 /* GroupsView.swift in Sources */,
 				4115CF2828A33295008119A8 /* ContentView.swift in Sources */,
+				416800D428A41CF3009212F3 /* MeetUpViewModel.swift in Sources */,
+				416800D228A41CE0009212F3 /* MessageViewModel.swift in Sources */,
 				4115CF3828A33F21008119A8 /* MockDataStore.swift in Sources */,
 				416800C628A3DBF8009212F3 /* FriendsView.swift in Sources */,
 				4115CF2628A33295008119A8 /* blinkUP_DemoApp.swift in Sources */,
 				416800C228A3DBC4009212F3 /* HomeView.swift in Sources */,
 				4115CF3C28A33F92008119A8 /* Group.swift in Sources */,
+				416800CE28A41CBD009212F3 /* GroupViewModel.swift in Sources */,
 				416800C428A3DBEC009212F3 /* FriendsGroupsContainerView.swift in Sources */,
 				416800CC28A3DC12009212F3 /* ProfileView.swift in Sources */,
 				4115CF3A28A33F85008119A8 /* Friend.swift in Sources */,

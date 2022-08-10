@@ -13,25 +13,38 @@ struct FriendsGroupsContainerView: View {
     
     var body: some View {
         VStack {
-            Picker("", selection: $selectedScreen) {
+            Picker("", selection: $selectedScreen.animation()) {
                 ForEach(screenSelection, id: \.self) {
                     Text($0)
                 }
+                
             }
             .pickerStyle(.segmented)
+            .labelsHidden()
             .padding()
+            
             Divider()
             
-            switch selectedScreen {
-            case "Friends":
-                FriendsView()
-            case "Groups":
-                GroupsView()
-            default:
-                FriendsView()
+            HStack(alignment: .center, spacing: 10) {
+                switch selectedScreen {
+                case "Friends":
+                    FriendsView()
+                        .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
+                    
+                case "Groups":
+                    GroupsView()
+                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
+                    
+                default:
+                    FriendsView()
+                        .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
+                    
+                }
             }
             Spacer()
         }
+        .navigationBarTitle("")
+        .navigationBarHidden(true)
     }
 }
 
