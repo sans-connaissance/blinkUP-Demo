@@ -13,34 +13,40 @@ struct CustomNavBarView: View {
     let showBackButton: Bool
     let title: String
     let subTitle: String?
+    let isHidden: Bool
     
     
     var body: some View {
-        HStack {
-            if showBackButton {
-                backButton
-            }
+        if isHidden {
+            HStack {}
+        } else {
             
-            Spacer()
-            titleSection
-            Spacer()
-            if showBackButton {
-                backButton.opacity(0)
+            HStack {
+                if showBackButton {
+                    backButton
+                }
+                
+                Spacer()
+                titleSection
+                Spacer()
+                if showBackButton {
+                    backButton.opacity(0)
+                }
+                
             }
-            
+            .padding()
+            .accentColor(.white)
+            .foregroundColor(.white)
+            .font(.headline)
+            .background(Color.blue.ignoresSafeArea(edges: .top))
         }
-        .padding()
-        .accentColor(.white)
-        .foregroundColor(.white)
-        .font(.headline)
-        .background(Color.blue.ignoresSafeArea(edges: .top))
     }
 }
 
 struct CustomNavBarView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            CustomNavBarView(showBackButton: true, title: "Title here", subTitle: "subtitle goes here")
+            CustomNavBarView(showBackButton: true, title: "Title here", subTitle: "subtitle goes here", isHidden: false)
             Spacer()
         }
     }

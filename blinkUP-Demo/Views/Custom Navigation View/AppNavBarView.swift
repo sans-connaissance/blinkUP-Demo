@@ -22,6 +22,7 @@ struct AppNavBarView: View {
                         
                 }
             }
+            .customNavBarisHidden(true)
             .customNavigationTitle("Custom Title")
             .customNavBarBackButtonHidden(true)
         }

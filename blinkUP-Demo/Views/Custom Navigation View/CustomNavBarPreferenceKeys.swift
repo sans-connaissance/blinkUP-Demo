@@ -40,6 +40,15 @@ struct CustomNavBarBackButtonHiddenPreferenceKey: PreferenceKey {
     }
 }
 
+struct CustomNavBarIsHiddenPreferenceKey: PreferenceKey {
+    
+    static var defaultValue: Bool = false
+    
+    static func reduce(value: inout Bool, nextValue: () -> Bool) {
+        value = nextValue()
+    }
+}
+
 
 extension View {
     
@@ -53,6 +62,10 @@ extension View {
     
     func customNavBarBackButtonHidden(_ hidden: Bool) -> some View {
         preference(key: CustomNavBarBackButtonHiddenPreferenceKey.self, value: hidden)
+    }
+    
+    func customNavBarisHidden(_ hidden: Bool) -> some View {
+        preference(key: CustomNavBarIsHiddenPreferenceKey.self, value: hidden)
     }
     
     func customNavBarItems(title: String = "", subTitle: String? = nil, backButtonHidden: Bool = false) -> some View {
