@@ -7,7 +7,7 @@
 
 import Foundation
 
-let groups: [Group] = [bLinkupTeam, sanDiegoStateAztecs, alabamaCrimsonTide]
+let mockGroups: [Group] = [bLinkupTeam, sanDiegoStateAztecs, alabamaCrimsonTide]
 let mockFriends: [Friend] = [daveMalicke, willBott, danGiralte, joeFinney]
 
 let bLinkupTeam = Group(

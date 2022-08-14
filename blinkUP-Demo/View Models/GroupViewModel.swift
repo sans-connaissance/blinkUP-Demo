@@ -20,8 +20,8 @@ struct GroupViewModel: Hashable {
         return group.name ?? ""
     }
     
-    var image: Image {
-        return Image(systemName: group.image ?? "person.fill")
+    var image: String {
+        return group.image ?? "person.fill"
     }
     
     var shortDescription: String {

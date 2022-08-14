@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class GroupsListViewModel: ObservableObject {
+    @Published var groups: [GroupViewModel] = []
+    
+    func getGroups() {
+        groups = mockGroups.map(GroupViewModel.init)
+    }
+}

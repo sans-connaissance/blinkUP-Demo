@@ -27,6 +27,14 @@
 		416800D628A425D3009212F3 /* FriendsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416800D528A425D3009212F3 /* FriendsListViewModel.swift */; };
 		416800D828A425DE009212F3 /* GroupsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416800D728A425DE009212F3 /* GroupsListViewModel.swift */; };
 		416800DA28A43305009212F3 /* FriendRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416800D928A43305009212F3 /* FriendRow.swift */; };
+		416800DC28A447CE009212F3 /* GroupRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416800DB28A447CE009212F3 /* GroupRow.swift */; };
+		41EC7EE428A8464A0068B20C /* GroupDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC7EE328A8464A0068B20C /* GroupDetailView.swift */; };
+		41EC7EE828A84D150068B20C /* AppNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC7EE728A84D150068B20C /* AppNavBarView.swift */; };
+		41EC7EEA28A84EFC0068B20C /* CustomNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC7EE928A84EFC0068B20C /* CustomNavBarView.swift */; };
+		41EC7EEC28A924CC0068B20C /* CustomNavBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC7EEB28A924CC0068B20C /* CustomNavBarContainerView.swift */; };
+		41EC7EEE28A928A00068B20C /* CustomNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC7EED28A928A00068B20C /* CustomNavView.swift */; };
+		41EC7EF028A92CE30068B20C /* CustomNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC7EEF28A92CE30068B20C /* CustomNavLink.swift */; };
+		41EC7EF228A938AC0068B20C /* CustomNavBarPreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC7EF128A938AB0068B20C /* CustomNavBarPreferenceKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +59,14 @@
 		416800D528A425D3009212F3 /* FriendsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListViewModel.swift; sourceTree = "<group>"; };
 		416800D728A425DE009212F3 /* GroupsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListViewModel.swift; sourceTree = "<group>"; };
 		416800D928A43305009212F3 /* FriendRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRow.swift; sourceTree = "<group>"; };
+		416800DB28A447CE009212F3 /* GroupRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRow.swift; sourceTree = "<group>"; };
+		41EC7EE328A8464A0068B20C /* GroupDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailView.swift; sourceTree = "<group>"; };
+		41EC7EE728A84D150068B20C /* AppNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavBarView.swift; sourceTree = "<group>"; };
+		41EC7EE928A84EFC0068B20C /* CustomNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarView.swift; sourceTree = "<group>"; };
+		41EC7EEB28A924CC0068B20C /* CustomNavBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarContainerView.swift; sourceTree = "<group>"; };
+		41EC7EED28A928A00068B20C /* CustomNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavView.swift; sourceTree = "<group>"; };
+		41EC7EEF28A92CE30068B20C /* CustomNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavLink.swift; sourceTree = "<group>"; };
+		41EC7EF128A938AB0068B20C /* CustomNavBarPreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarPreferenceKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,11 +143,12 @@
 		4115CF3528A33ED6008119A8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				41EC7EE628A84CB40068B20C /* Custom Navigation View */,
+				41EC7EE528A846580068B20C /* Groups */,
 				4115CF2728A33295008119A8 /* ContentView.swift */,
 				416800C128A3DBC4009212F3 /* HomeView.swift */,
 				416800C328A3DBEC009212F3 /* FriendsGroupsContainerView.swift */,
 				416800C528A3DBF8009212F3 /* FriendsListView.swift */,
-				416800C728A3DC01009212F3 /* GroupsListView.swift */,
 				416800C928A3DC09009212F3 /* SearchView.swift */,
 				416800CB28A3DC12009212F3 /* ProfileView.swift */,
 				416800D928A43305009212F3 /* FriendRow.swift */,
@@ -145,6 +162,29 @@
 				4115CF3728A33F21008119A8 /* MockDataStore.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		41EC7EE528A846580068B20C /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				41EC7EE328A8464A0068B20C /* GroupDetailView.swift */,
+				416800C728A3DC01009212F3 /* GroupsListView.swift */,
+				416800DB28A447CE009212F3 /* GroupRow.swift */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		41EC7EE628A84CB40068B20C /* Custom Navigation View */ = {
+			isa = PBXGroup;
+			children = (
+				41EC7EE728A84D150068B20C /* AppNavBarView.swift */,
+				41EC7EED28A928A00068B20C /* CustomNavView.swift */,
+				41EC7EE928A84EFC0068B20C /* CustomNavBarView.swift */,
+				41EC7EEB28A924CC0068B20C /* CustomNavBarContainerView.swift */,
+				41EC7EEF28A92CE30068B20C /* CustomNavLink.swift */,
+				41EC7EF128A938AB0068B20C /* CustomNavBarPreferenceKeys.swift */,
+			);
+			path = "Custom Navigation View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,18 +259,26 @@
 			files = (
 				416800CA28A3DC09009212F3 /* SearchView.swift in Sources */,
 				416800D028A41CC8009212F3 /* FriendViewModel.swift in Sources */,
+				41EC7EE828A84D150068B20C /* AppNavBarView.swift in Sources */,
 				416800C828A3DC01009212F3 /* GroupsListView.swift in Sources */,
 				4115CF2828A33295008119A8 /* ContentView.swift in Sources */,
 				416800DA28A43305009212F3 /* FriendRow.swift in Sources */,
 				416800D428A41CF3009212F3 /* MeetUpViewModel.swift in Sources */,
 				416800D228A41CE0009212F3 /* MessageViewModel.swift in Sources */,
+				41EC7EE428A8464A0068B20C /* GroupDetailView.swift in Sources */,
 				4115CF3828A33F21008119A8 /* MockDataStore.swift in Sources */,
 				416800C628A3DBF8009212F3 /* FriendsListView.swift in Sources */,
+				41EC7EEC28A924CC0068B20C /* CustomNavBarContainerView.swift in Sources */,
+				41EC7EF228A938AC0068B20C /* CustomNavBarPreferenceKeys.swift in Sources */,
 				416800D628A425D3009212F3 /* FriendsListViewModel.swift in Sources */,
 				4115CF2628A33295008119A8 /* blinkUP_DemoApp.swift in Sources */,
+				41EC7EF028A92CE30068B20C /* CustomNavLink.swift in Sources */,
+				416800DC28A447CE009212F3 /* GroupRow.swift in Sources */,
 				416800C228A3DBC4009212F3 /* HomeView.swift in Sources */,
 				4115CF3C28A33F92008119A8 /* Group.swift in Sources */,
+				41EC7EEE28A928A00068B20C /* CustomNavView.swift in Sources */,
 				416800CE28A41CBD009212F3 /* GroupViewModel.swift in Sources */,
+				41EC7EEA28A84EFC0068B20C /* CustomNavBarView.swift in Sources */,
 				416800C428A3DBEC009212F3 /* FriendsGroupsContainerView.swift in Sources */,
 				416800CC28A3DC12009212F3 /* ProfileView.swift in Sources */,
 				416800D828A425DE009212F3 /* GroupsListViewModel.swift in Sources */,

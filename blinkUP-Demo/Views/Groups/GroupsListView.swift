@@ -1,5 +1,5 @@
 //
-//  FriendsView.swift
+//  GroupsView.swift
 //  blinkUP-Demo
 //
 //  Created by David Malicke on 8/10/22.
@@ -7,15 +7,14 @@
 
 import SwiftUI
 
-struct FriendsListView: View {
-    @StateObject var vm = FriendsListViewModel()
+struct GroupsListView: View {
+    @StateObject var vm = GroupsListViewModel()
     
     var body: some View {
         VStack {
-            Text("\(vm.friends.count) Friends").bold()
             List {
-                ForEach(vm.friends, id: \.self) { friend in
-                    FriendRow(friend: friend)
+                ForEach(vm.groups, id: \.self) { group in
+                    GroupRow(group: group)
                 }
                 .listRowSeparatorTint(.clear)
 
@@ -25,12 +24,12 @@ struct FriendsListView: View {
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)
-        .onAppear{vm.getFriends()}
+        .onAppear{vm.getGroups()}
     }
 }
 
-struct FriendsView_Previews: PreviewProvider {
+struct GroupsView_Previews: PreviewProvider {
     static var previews: some View {
-        FriendsListView()
+        GroupsListView()
     }
 }
