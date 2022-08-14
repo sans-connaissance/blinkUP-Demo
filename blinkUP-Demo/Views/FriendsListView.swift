@@ -19,7 +19,6 @@ struct FriendsListView: View {
                 }
                 .listRowSeparatorTint(.clear)
 
-                
             }
             .listStyle(.grouped)
         }

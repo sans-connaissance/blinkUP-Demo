@@ -12,39 +12,42 @@ struct FriendsGroupsContainerView: View {
     var screenSelection = ["Friends", "Groups"]
     
     var body: some View {
-        VStack {
-            Picker("", selection: $selectedScreen.animation()) {
-                ForEach(screenSelection, id: \.self) {
-                    Text($0)
+        CustomNavView{
+            VStack {
+                Picker("", selection: $selectedScreen.animation()) {
+                    ForEach(screenSelection, id: \.self) {
+                        Text($0)
+                    }
+                    
                 }
+                .pickerStyle(.segmented)
+                .labelsHidden()
+                .padding()
                 
-            }
-            .pickerStyle(.segmented)
-            .labelsHidden()
-            .padding()
-            
-            Divider()
-            
-            HStack(alignment: .center, spacing: 10) {
-                switch selectedScreen {
-                case "Friends":
-                    FriendsListView()
-                        .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
-                    
-                case "Groups":
-                    GroupsListView()
-                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
-                    
-                default:
-                    FriendsListView()
-                        .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
-                    
+                Divider()
+                
+                HStack(alignment: .center, spacing: 10) {
+                    switch selectedScreen {
+                    case "Friends":
+                        FriendsListView()
+                            .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
+                        
+                    case "Groups":
+                        GroupsListView()
+                            .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
+                        
+                    default:
+                        FriendsListView()
+                            .transition(.asymmetric(insertion: .move(edge: .leading), removal: .move(edge: .trailing)))
+                        
+                    }
                 }
+                Spacer()
             }
-            Spacer()
+            .customNavBarisHidden(true)
+//            .navigationBarTitle("")
+//            .navigationBarHidden(true)
         }
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
     }
 }
 

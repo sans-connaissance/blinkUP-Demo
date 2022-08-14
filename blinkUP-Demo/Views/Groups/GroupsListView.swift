@@ -14,16 +14,23 @@ struct GroupsListView: View {
         VStack {
             List {
                 ForEach(vm.groups, id: \.self) { group in
-                    GroupRow(group: group)
+                    HStack(spacing:0) {
+                      GroupRow(group: group)
+                        CustomNavLink(destination: GroupDetailView(group: group)) {
+                            EmptyView()
+                        }
+                        .frame(width:0)
+                        .opacity(0)
+                    }
                 }
                 .listRowSeparatorTint(.clear)
-
-                
             }
+            
             .listStyle(.grouped)
         }
-        .navigationBarTitle("")
-        .navigationBarHidden(true)
+        .customNavBarisHidden(true)
+        //        .navigationBarTitle("")
+        //        .navigationBarHidden(true)
         .onAppear{vm.getGroups()}
     }
 }
