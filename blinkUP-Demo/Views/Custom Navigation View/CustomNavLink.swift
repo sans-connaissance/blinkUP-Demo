@@ -26,7 +26,6 @@ struct CustomNavLink<Label:View, Destination: View>: View {
         } label: {
             label
         }
-        
     }
 }
 

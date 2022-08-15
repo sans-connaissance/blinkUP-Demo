@@ -75,7 +75,7 @@ struct CustomNavBarContainerView_Previews: PreviewProvider {
                 Text("Hello World")
                     .foregroundColor(.white)
                     .customNavigationTitle("This is it!")
-                    .customNavigationSubTitle("oh yeah!")
+                    .customNavigationSubTitle("yeah!")
             }
         }
     }

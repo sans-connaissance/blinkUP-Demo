@@ -55,37 +55,37 @@ let message1 = Message(
     id: 1,
     message: "Hey, we are at Steve's house. Come on over.",
     likes: 3,
-    postedBy: nil)
+    postedBy: willBott)
 
 let message2 = Message(
     id: 2,
     message: "Is anyone bringing pizza rolls?",
     likes: 100,
-    postedBy: nil)
+    postedBy: danGiralte)
 
 let message3 = Message(
     id: 3,
     message: "Yes.",
     likes: 100,
-    postedBy: nil)
+    postedBy: danGiralte)
 
 let message4 = Message(
     id: 4,
     message: "Who's bringing the Ann Arbor Artisanal Ranch?",
     likes: 100,
-    postedBy: nil)
+    postedBy: joeFinney)
 
 let message5 = Message(
     id: 5,
     message: "Hey did you know Brady Hoke used to coach at the University of Michigan?",
     likes: 100,
-    postedBy: nil)
+    postedBy: willBott)
 
 let message6 = Message(
     id: 6,
     message: "Brady Hoke is wearing a headset!!???",
     likes: 100,
-    postedBy: nil)
+    postedBy: joeFinney)
 
 
 let meetup1 = MeetUp(

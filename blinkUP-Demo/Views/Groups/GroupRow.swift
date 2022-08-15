@@ -55,8 +55,12 @@ struct ImageViewGroup: View {
     var body: some View {
         ZStack {
             Circle()
-                .frame(width: 55.0, height: 55.0)
+                .frame(width: 45.0, height: 45.0)
                 .foregroundColor(.white)
+            Circle()
+                .strokeBorder(.black, lineWidth: 1)
+                .frame(width: 45.0, height: 45.0)
+                
             Image(systemName: image)
                 .resizable()
                 .scaledToFit()

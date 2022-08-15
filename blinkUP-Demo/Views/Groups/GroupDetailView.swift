@@ -11,10 +11,32 @@ struct GroupDetailView: View {
     var group: GroupViewModel
     
     var body: some View {
-        Text(group.name)
-            .customNavBarisHidden(false)
-            .customNavBarType(.group)
-            .customNavBarGroupVM(group)
+        VStack(alignment: .leading) {
+            Text(group.name)
+                .padding(.leading)
+            Text(group.shortDescription)
+                .padding(.leading)
+            
+            List{
+                ForEach(group.messages, id: \.self) { message in
+                    VStack(alignment:.leading){
+                        Text(message.messageText)
+                        
+                        HStack {
+                            Spacer()
+                            Text(message.postedBy?.fullName ?? "")
+                            
+                        }
+                    }
+                }
+            }
+            .listStyle(.grouped)
+            
+        }
+        
+        .customNavBarisHidden(false)
+        .customNavBarType(.group)
+        .customNavBarGroupVM(group)
     }
 }
 

@@ -53,7 +53,7 @@ struct CustomNavBarView: View {
             .accentColor(.white)
             .foregroundColor(.white)
             .font(.headline)
-            .background(Color.blue.ignoresSafeArea(edges: .top))
+            .background(Color.white.ignoresSafeArea(edges: .top))
         }
     }
 }
@@ -65,6 +65,7 @@ extension CustomNavBarView {
             presentationMode.wrappedValue.dismiss()
         } label: {
             Image(systemName: "chevron.left")
+                .foregroundColor(.blue)
         }
     }
     
@@ -75,29 +76,72 @@ extension CustomNavBarView {
             Spacer()
             VStack {
                 Text("\(10)")
+                    .foregroundColor(.blue)
                 Text("Friends")
+                    .foregroundColor(.blue)
             }
             VStack {
                 Text("\(15)")
+                    .foregroundColor(.blue)
                 Text("Count")
+                    .foregroundColor(.blue)
             }
         }
     }
     
     private var groupSectionHeader: some View {
         
-        HStack(spacing: 10){
-            ImageViewGroup(image: group.image)
-                .foregroundColor(.black)
-            Spacer()
-            VStack {
-                Text("\(group.members.count)")
-                Text("Members")
-            }
-            VStack {
-                Text("\(group.meetups.count)")
-                Text("Meet Ups")
-            }
+        VStack {
+            HStack(alignment: .bottom, spacing: 10){
+                ImageViewGroup(image: group.image)
+                    .foregroundColor(.black)
+                
+                Spacer()
+                VStack {
+                    Text("\(group.members.count)")
+                        .frame(width: 25, height: 25)
+                        .font(Font.system(size: 12.0))
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .clipShape(Circle())
+                    
+                    Text("Members")
+                        .font(Font.system(size: 10.0))
+                        .foregroundColor(.blue)
+                        .frame(height: 18)
+                        .frame(minWidth: 40)
+                }
+                VStack {
+                    Text("\(group.meetups.count)")
+                        .frame(width: 25, height: 25)
+                        .font(Font.system(size: 12.0))
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .clipShape(Circle())
+                    Text("Meet Ups")
+                        .font(Font.system(size: 10.0))
+                        .foregroundColor(.blue)
+                        .frame(height: 18)
+                        .frame(minWidth: 40)
+                }
+                
+                VStack {
+                    Image(systemName: "ellipsis")
+                        .frame(width: 25, height: 25)
+                        .font(Font.system(size: 12.0))
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .clipShape(Circle())
+                    
+                    Text("manage")
+                        .font(Font.system(size: 10.0))
+                        .foregroundColor(.blue)
+                        .frame(height: 18)
+                        .frame(minWidth: 40)
+
+                }
+            }.padding(.trailing, 10)
+            Divider()
         }
     }
 }
