@@ -35,6 +35,7 @@
 		41EC7EEE28A928A00068B20C /* CustomNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC7EED28A928A00068B20C /* CustomNavView.swift */; };
 		41EC7EF028A92CE30068B20C /* CustomNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC7EEF28A92CE30068B20C /* CustomNavLink.swift */; };
 		41EC7EF228A938AC0068B20C /* CustomNavBarPreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC7EF128A938AB0068B20C /* CustomNavBarPreferenceKeys.swift */; };
+		41EC7EF628AAB15E0068B20C /* FriendDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41EC7EF528AAB15E0068B20C /* FriendDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		41EC7EED28A928A00068B20C /* CustomNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavView.swift; sourceTree = "<group>"; };
 		41EC7EEF28A92CE30068B20C /* CustomNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavLink.swift; sourceTree = "<group>"; };
 		41EC7EF128A938AB0068B20C /* CustomNavBarPreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarPreferenceKeys.swift; sourceTree = "<group>"; };
+		41EC7EF528AAB15E0068B20C /* FriendDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,8 @@
 		4115CF2428A33295008119A8 /* blinkUP-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				4115CF2728A33295008119A8 /* ContentView.swift */,
+				41EC7EF428AAB0700068B20C /* Tabs */,
 				4115CF3628A33F10008119A8 /* Networking */,
 				4115CF3328A33EC8008119A8 /* Models */,
 				4115CF3428A33ECF008119A8 /* View Models */,
@@ -144,14 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				41EC7EE628A84CB40068B20C /* Custom Navigation View */,
-				41EC7EE528A846580068B20C /* Groups */,
-				4115CF2728A33295008119A8 /* ContentView.swift */,
-				416800C128A3DBC4009212F3 /* HomeView.swift */,
 				416800C328A3DBEC009212F3 /* FriendsGroupsContainerView.swift */,
-				416800C528A3DBF8009212F3 /* FriendsListView.swift */,
-				416800C928A3DC09009212F3 /* SearchView.swift */,
-				416800CB28A3DC12009212F3 /* ProfileView.swift */,
-				416800D928A43305009212F3 /* FriendRow.swift */,
+				41EC7EE528A846580068B20C /* Groups */,
+				41EC7EF328AAB0430068B20C /* Friends */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -185,6 +184,26 @@
 				41EC7EF128A938AB0068B20C /* CustomNavBarPreferenceKeys.swift */,
 			);
 			path = "Custom Navigation View";
+			sourceTree = "<group>";
+		};
+		41EC7EF328AAB0430068B20C /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				41EC7EF528AAB15E0068B20C /* FriendDetailView.swift */,
+				416800C528A3DBF8009212F3 /* FriendsListView.swift */,
+				416800D928A43305009212F3 /* FriendRow.swift */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		41EC7EF428AAB0700068B20C /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				416800C128A3DBC4009212F3 /* HomeView.swift */,
+				416800C928A3DC09009212F3 /* SearchView.swift */,
+				416800CB28A3DC12009212F3 /* ProfileView.swift */,
+			);
+			path = Tabs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +288,7 @@
 				4115CF3828A33F21008119A8 /* MockDataStore.swift in Sources */,
 				416800C628A3DBF8009212F3 /* FriendsListView.swift in Sources */,
 				41EC7EEC28A924CC0068B20C /* CustomNavBarContainerView.swift in Sources */,
+				41EC7EF628AAB15E0068B20C /* FriendDetailView.swift in Sources */,
 				41EC7EF228A938AC0068B20C /* CustomNavBarPreferenceKeys.swift in Sources */,
 				416800D628A425D3009212F3 /* FriendsListViewModel.swift in Sources */,
 				4115CF2628A33295008119A8 /* blinkUP_DemoApp.swift in Sources */,

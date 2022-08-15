@@ -87,7 +87,35 @@ struct CustomNavBarMeetUpCountPreferenceKey: PreferenceKey {
     }
 }
 
+struct CustomNavBarFriendVMPreferenceKey: PreferenceKey {
+    
+    static var defaultValue = initialFriend
+    
+    static func reduce(value: inout FriendViewModel, nextValue: () -> FriendViewModel) {
+        value = nextValue()
+    }
+}
+
+struct CustomNavBarGroupVMPreferenceKey: PreferenceKey {
+   // let initialGroup = mockGroups.map(GroupViewModel.init).first!
+    static var defaultValue = initialGroup
+    
+    static func reduce(value: inout GroupViewModel, nextValue: () -> GroupViewModel) {
+        value = nextValue()
+    }
+}
+
+
 extension View {
+    
+    func customNavBarFriendVM(_ vm: FriendViewModel) -> some View {
+        preference(key: CustomNavBarFriendVMPreferenceKey.self, value: vm)
+    }
+    
+    func customNavBarGroupVM(_ vm: GroupViewModel) -> some View {
+        preference(key: CustomNavBarGroupVMPreferenceKey.self, value: vm)
+    }
+    
     
     func customNavigationTitle(_ title: String) -> some View {
         preference(key: CustomNavBarTitlePreferenceKey.self, value: title)

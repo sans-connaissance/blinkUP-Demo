@@ -8,7 +8,13 @@
 import Foundation
 
 let mockGroups: [Group] = [bLinkupTeam, sanDiegoStateAztecs, alabamaCrimsonTide]
+
+let initialGroup = mockGroups.map(GroupViewModel.init).first!
+
 let mockFriends: [Friend] = [daveMalicke, willBott, danGiralte, joeFinney]
+
+let initialFriend = mockFriends.map(FriendViewModel.init).first!
+
 
 let bLinkupTeam = Group(
     id: 1,

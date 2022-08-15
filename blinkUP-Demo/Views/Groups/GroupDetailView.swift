@@ -14,9 +14,7 @@ struct GroupDetailView: View {
         Text(group.name)
             .customNavBarisHidden(false)
             .customNavBarType(.group)
-            .customNavBarGroupImage(group.image)
-            .customNavBarGroupMemberCount(group.members.count)
-            .customNavBarGroupMeetUpCount(group.meetups.count)
+            .customNavBarGroupVM(group)
     }
 }
 

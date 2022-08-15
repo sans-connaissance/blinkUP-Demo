@@ -15,16 +15,23 @@ struct FriendsListView: View {
             Text("\(vm.friends.count) Friends").bold()
             List {
                 ForEach(vm.friends, id: \.self) { friend in
-                    FriendRow(friend: friend)
+                    HStack(spacing:0) {
+                        FriendRow(friend: friend)
+                        CustomNavLink(destination: FriendDetailView(friend: friend)) {
+                            EmptyView()
+                        }
+                        .frame(width:0)
+                        .opacity(0)
+                    }
+                    .listRowSeparatorTint(.clear)
                 }
-                .listRowSeparatorTint(.clear)
-
             }
             .listStyle(.grouped)
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)
         .onAppear{vm.getFriends()}
+        
     }
 }
 

@@ -18,6 +18,8 @@ struct CustomNavBarContainerView<Content: View>: View {
     @State private var image: String = "person.fill"
     @State private var memberCount: Int = 0
     @State private var meetUpCount: Int = 0
+    @State private var group: GroupViewModel = initialGroup
+    @State private var friend: FriendViewModel = initialFriend
     
     init(@ViewBuilder content: () -> Content) {
         self.content = content()
@@ -26,7 +28,7 @@ struct CustomNavBarContainerView<Content: View>: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            CustomNavBarView(showBackButton: showBackButton, title: title, subTitle: subTitle, isHidden: isHidden, navType: navType, image: image, memberCount: memberCount, meetUpCount: meetUpCount)
+            CustomNavBarView(showBackButton: showBackButton, title: title, subTitle: subTitle, isHidden: isHidden, navType: navType, image: image, memberCount: memberCount, meetUpCount: meetUpCount, group: group, friend: friend)
             content
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
@@ -53,6 +55,12 @@ struct CustomNavBarContainerView<Content: View>: View {
         }
         .onPreferenceChange(CustomNavBarMeetUpCountPreferenceKey.self) { value in
             self.meetUpCount = value
+        }
+        .onPreferenceChange(CustomNavBarFriendVMPreferenceKey.self) { value in
+            self.friend = value
+        }
+        .onPreferenceChange(CustomNavBarGroupVMPreferenceKey.self) { value in
+            self.group = value
         }
         
     }

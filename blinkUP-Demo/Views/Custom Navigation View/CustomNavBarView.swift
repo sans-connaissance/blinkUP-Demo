@@ -18,6 +18,8 @@ struct CustomNavBarView: View {
     let image: String
     let memberCount: Int
     let meetUpCount: Int
+    let group: GroupViewModel
+    let friend: FriendViewModel
     
     
     var body: some View {
@@ -34,7 +36,7 @@ struct CustomNavBarView: View {
                     groupSectionHeader
                     Spacer()
                 case .friend:
-                    titleSection
+                    friendSectionHeader
                     Spacer()
                     if showBackButton {
                         backButton.opacity(0)
@@ -66,30 +68,34 @@ extension CustomNavBarView {
         }
     }
     
-    private var titleSection: some View {
-        VStack(spacing: 4) {
-            Text(title)
-                .font(.title)
-                .fontWeight(.semibold)
-            if let subTitle = subTitle {
-                Text(subTitle)
+    private var friendSectionHeader: some View {
+        HStack(spacing: 10){
+            ImageViewGroup(image: friend.image)
+                .foregroundColor(.black)
+            Spacer()
+            VStack {
+                Text("\(10)")
+                Text("Friends")
             }
-            
+            VStack {
+                Text("\(15)")
+                Text("Count")
+            }
         }
     }
     
     private var groupSectionHeader: some View {
         
         HStack(spacing: 10){
-            ImageViewGroup(image: image)
+            ImageViewGroup(image: group.image)
                 .foregroundColor(.black)
             Spacer()
             VStack {
-                Text("\(memberCount)")
+                Text("\(group.members.count)")
                 Text("Members")
             }
             VStack {
-                Text("\(meetUpCount)")
+                Text("\(group.meetups.count)")
                 Text("Meet Ups")
             }
         }
@@ -98,8 +104,12 @@ extension CustomNavBarView {
 
 struct CustomNavBarView_Previews: PreviewProvider {
     static var previews: some View {
+        
+        let examplesF = mockFriends.map(FriendViewModel.init)
+        let examplesG = mockGroups.map(GroupViewModel.init)
+        
         VStack {
-            CustomNavBarView(showBackButton: true, title: "Title here", subTitle: "subtitle goes here", isHidden: false, navType: .group, image: "person.fiil", memberCount: 10, meetUpCount: 10)
+            CustomNavBarView(showBackButton: true, title: "Title here", subTitle: "subtitle goes here", isHidden: false, navType: .group, image: "person.fiil", memberCount: 10, meetUpCount: 10, group: examplesG[0], friend: examplesF[0])
             Spacer()
         }
     }
