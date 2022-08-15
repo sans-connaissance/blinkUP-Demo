@@ -18,10 +18,13 @@ struct GroupsListView: View {
                       GroupRow(group: group)
                         CustomNavLink(destination: GroupDetailView(group: group)) {
                             EmptyView()
+
                         }
                         .frame(width:0)
                         .opacity(0)
+
                     }
+
                 }
                 .listRowSeparatorTint(.clear)
             }

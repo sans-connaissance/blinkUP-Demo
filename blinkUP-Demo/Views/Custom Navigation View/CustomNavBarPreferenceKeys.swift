@@ -49,6 +49,43 @@ struct CustomNavBarIsHiddenPreferenceKey: PreferenceKey {
     }
 }
 
+struct CustomNavBarIsTypePreferenceKey: PreferenceKey {
+    
+    static var defaultValue: NavType = .friend
+    
+    static func reduce(value: inout NavType, nextValue: () -> NavType) {
+        value = nextValue()
+    }
+}
+
+struct CustomNavBarGroupImagePreferenceKey: PreferenceKey {
+    
+    static var defaultValue: String = ""
+    
+    static func reduce(value: inout String, nextValue: () -> String) {
+        value = nextValue()
+    }
+}
+
+struct CustomNavBarMemberCountPreferenceKey: PreferenceKey {
+    
+    static var defaultValue: Int = 0
+    
+    static func reduce(value: inout Int, nextValue: () -> Int) {
+        value = nextValue()
+    
+    }
+}
+
+struct CustomNavBarMeetUpCountPreferenceKey: PreferenceKey {
+    
+    static var defaultValue: Int = 0
+    
+    static func reduce(value: inout Int, nextValue: () -> Int) {
+        value = nextValue()
+    
+    }
+}
 
 extension View {
     
@@ -67,6 +104,23 @@ extension View {
     func customNavBarisHidden(_ hidden: Bool) -> some View {
         preference(key: CustomNavBarIsHiddenPreferenceKey.self, value: hidden)
     }
+    
+    func customNavBarType(_ navType: NavType) -> some View {
+        preference(key: CustomNavBarIsTypePreferenceKey.self, value: navType)
+    }
+    
+    func customNavBarGroupImage(_ image: String) -> some View {
+        preference(key: CustomNavBarGroupImagePreferenceKey.self, value: image)
+    }
+    
+    func customNavBarGroupMemberCount(_ count: Int) -> some View {
+        preference(key: CustomNavBarMemberCountPreferenceKey.self, value: count)
+    }
+    
+    func customNavBarGroupMeetUpCount(_ count: Int) -> some View {
+        preference(key: CustomNavBarMeetUpCountPreferenceKey.self, value: count)
+    }
+    
     
     func customNavBarItems(title: String = "", subTitle: String? = nil, backButtonHidden: Bool = false) -> some View {
         self

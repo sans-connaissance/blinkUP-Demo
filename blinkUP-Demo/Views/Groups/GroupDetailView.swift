@@ -12,6 +12,11 @@ struct GroupDetailView: View {
     
     var body: some View {
         Text(group.name)
+            .customNavBarisHidden(false)
+            .customNavBarType(.group)
+            .customNavBarGroupImage(group.image)
+            .customNavBarGroupMemberCount(group.members.count)
+            .customNavBarGroupMeetUpCount(group.meetups.count)
     }
 }
 
