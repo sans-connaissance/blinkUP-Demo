@@ -14,29 +14,55 @@ struct FriendsListView: View {
         VStack {
             Text("\(vm.friends.count) Friends").bold()
             List {
-                ForEach(vm.friends, id: \.self) { friend in
-                    HStack(spacing:0) {
-                        FriendRow(friend: friend)
-                        CustomNavLink(destination: FriendDetailView(friend: friend)) {
-                            EmptyView()
+                Section(header: CustomHeaderView(text: "Hi")) {
+                    ForEach(vm.friends, id: \.self) { friend in
+                        HStack(spacing: 0) {
+                            FriendRow(friend: friend)
+                            CustomNavLink(destination: FriendDetailView(friend: friend)) {
+                                EmptyView()
+                            }
+                            .frame(width: 0)
+                            .opacity(0)
                         }
-                        .frame(width:0)
-                        .opacity(0)
+                        .listRowBackground(Color.clear)
+                        .listRowInsets(EdgeInsets(
+                            top: 10,
+                            leading: 0,
+                            bottom: 0,
+                            trailing: 0))
                     }
-                    .listRowSeparatorTint(.clear)
                 }
+                .listRowSeparator(.hidden)
+                .textCase(nil)
+                
+                // ------ New Section ------ //
             }
-            .listStyle(.grouped)
+            .listStyle(.inset)
         }
         .navigationBarTitle("")
         .navigationBarHidden(true)
-        .onAppear{vm.getFriends()}
-        
+        .onAppear { vm.getFriends() }
     }
 }
 
 struct FriendsView_Previews: PreviewProvider {
     static var previews: some View {
         FriendsListView()
+    }
+}
+
+struct CustomHeaderView: View {
+    var text: String
+    
+    var body: some View {
+        HStack(alignment: .center) {
+            Spacer()
+            Text(text)
+                .font(.headline)
+                .fontWeight(.bold)
+                .foregroundColor(.black)
+            //    .padding(.top, -20)
+            Spacer()
+        }
     }
 }
