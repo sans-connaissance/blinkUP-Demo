@@ -8,13 +8,12 @@
 import SwiftUI
 
 struct CustomNavView<Content: View>: View {
-    
     let content: Content
-    
+
     init(@ViewBuilder content: () -> Content) {
         self.content = content()
     }
-    
+
     var body: some View {
         NavigationView {
             CustomNavBarContainerView {
@@ -34,9 +33,8 @@ struct CustomNavView_Previews: PreviewProvider {
     }
 }
 
-
 extension UINavigationController {
-    open override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         interactivePopGestureRecognizer?.delegate = nil
     }
