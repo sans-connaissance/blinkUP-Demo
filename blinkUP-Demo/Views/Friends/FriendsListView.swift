@@ -36,6 +36,26 @@ struct FriendsListView: View {
                 .textCase(nil)
                 
                 // ------ New Section ------ //
+                Section(header: CustomHeaderView(text: "Hello")) {
+                    ForEach(vm.friends, id: \.self) { friend in
+                        HStack(spacing: 0) {
+                            FriendRow(friend: friend)
+                            CustomNavLink(destination: FriendDetailView(friend: friend)) {
+                                EmptyView()
+                            }
+                            .frame(width: 0)
+                            .opacity(0)
+                        }
+                        .listRowBackground(Color.clear)
+                        .listRowInsets(EdgeInsets(
+                            top: 10,
+                            leading: 0,
+                            bottom: 0,
+                            trailing: 0))
+                    }
+                }
+                .listRowSeparator(.hidden)
+                .textCase(nil)
             }
             .listStyle(.inset)
         }

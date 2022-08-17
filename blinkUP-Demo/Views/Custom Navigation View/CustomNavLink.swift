@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+//FOR TOMORROW TRY TO SEE IF ISACTIVE WILL WORK
+
 struct CustomNavLink<Label:View, Destination: View>: View {
     
     let destination: Destination
